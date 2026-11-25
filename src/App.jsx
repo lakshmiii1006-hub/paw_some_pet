@@ -19,7 +19,9 @@ import MyListings from './pages/MyListings';
 import AddPetListing from './pages/AddPetList';
 
 // Backend API connection
-const API_BASE_URL = 'http://localhost:5000/api/ai';
+// Replace line 20:
+const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/ai`;
+
 
 // Common function to communicate with Gemini through Express
 async function callAI(endpoint, body = {}) {
