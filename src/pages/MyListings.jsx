@@ -1,7 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:5000/api/pets';
+const API_BASE = (
+  import.meta.env.VITE_API_URL || 'https://paw-some-pet.onrender.com'
+).replace(/\/+$/, '');
+
+const API_URL = `${API_BASE}/api/pets`;
 
 function MyListings() {
   const [pets, setPets] = useState([]);

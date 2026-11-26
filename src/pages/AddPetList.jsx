@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000/api/pets';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://paw-some-pet.onrender.com';
+const API_URL = `${API_BASE}/api/pets`;
+
 
 function AddPetListing() {
   const navigate = useNavigate();

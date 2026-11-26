@@ -20,7 +20,11 @@ import AddPetListing from './pages/AddPetList';
 
 // Backend API connection
 // Replace line 20:
-const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/ai`;
+const API_BASE = (
+  import.meta.env.VITE_API_URL || 'https://paw-some-pet.onrender.com'
+).replace(/\/+$/, '');
+
+const API_BASE_URL = `${API_BASE}/api/ai`;
 
 
 // Common function to communicate with Gemini through Express
